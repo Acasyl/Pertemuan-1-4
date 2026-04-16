@@ -1,0 +1,196 @@
+/* Base - Soft Purple + Soft Blue Theme */
+:root{
+  --bg:#eef3ff;           /* Soft bluish background */
+  --text:#2d3748;         /* Dark blue-gray text */
+  --muted:#718096;        /* Medium blue-gray muted text */
+  --card:#e3f2ff;         /* Soft blue cards (was pure white) */
+  --border:#d0ddff;       /* Light soft-blue border */
+  
+  --brand:#9f7aea;        /* Soft purple brand color */
+  --brand-600:#805ad5;    /* Slightly darker soft purple */
+  --accent:#48bb78;       /* Soft green accent */
+  --accent-600:#38a169;   /* Slightly darker green */
+  --danger:#f56565;       /* Soft red */
+  --danger-600:#e53e3e;   /* Slightly darker red */
+  
+  --radius:12px;
+  --shadow:0 8px 24px rgba(128, 90, 213, 0.10); /* Soft purple shadow */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:"Inter", Arial, Helvetica, sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{padding:28px 0}
+header h1{margin:0;font-size:28px;letter-spacing:.2px;color:#2d3748}
+
+/* Navbar - Soft Purple Gradient */
+nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  background:linear-gradient(135deg, var(--brand), #b794f4); /* Soft purple gradient */
+  color:#fff;
+  padding:12px 14px;
+  border-radius:var(--radius);
+  margin-bottom:18px;
+  box-shadow:var(--shadow)
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:8px;
+  opacity:.95;
+  transition:.2s
+}
+nav a:hover{
+  background:rgba(255,255,255,.2);
+  opacity:1
+}
+
+/* Card/Main */
+main,.main{
+  background:var(--card);
+  padding:22px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  border:1px solid var(--border)
+}
+/* Auth card center */
+main.auth{max-width:520px;margin:40px auto}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0 10px}
+table thead th{
+  font-size:14px;
+  color:var(--muted);
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border)
+}
+table tbody tr{
+  background:var(--card);
+  box-shadow:0 1px 0 var(--border)
+}
+table td{
+  padding:12px 14px;
+  border-top:1px solid var(--border)
+}
+table tbody tr:hover{
+  background:#f7fafc; /* Very light blue hover */
+}
+table img{
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06)
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:var(--shadow);
+  transition:.2s;
+  border:none;
+  cursor:pointer
+}
+.btn:hover{
+  background:var(--brand-600);
+  transform:translateY(-1px)
+}
+.btn-lg{padding:12px 18px;font-size:16px}
+.btn-brand{background:var(--brand)}
+.btn-brand:hover{background:var(--brand-600)}
+.btn-outline{
+  background:transparent;
+  color:var(--brand);
+  border:2px solid var(--brand)
+}
+.btn-outline:hover{
+  background:var(--brand);
+  color:#fff
+}
+.btn-danger{background:var(--danger)}
+.btn-danger:hover{background:var(--danger-600)}
+
+/* Forms */
+form{display:grid;gap:14px}
+.input label{
+  display:block;
+  font-weight:600;
+  margin-bottom:6px;
+  color:var(--muted)
+}
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+select,
+input[type="file"]{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s
+}
+input:focus,
+select:focus{
+  border-color:var(--brand);
+  box-shadow:0 0 0 4px rgba(66, 153, 225, 0.15) /* Soft blue focus ring */
+}
+.submit input[type="submit"], 
+.submit button{
+  cursor:pointer
+}
+.submit{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:6px
+}
+
+/* Alerts */
+.alert{
+  padding:12px 14px;
+  border-radius:10px;
+  margin-bottom:12px;
+  border-left:4px solid transparent
+}
+.alert-danger{
+  background:#fed7d7;
+  color:#c53030;
+  border-left-color:var(--danger)
+}
+.alert-warn{
+  background:#feebc8;
+  color:#b7791f;
+  border-left-color:#ed8936
+}
+.alert-info{
+  background:#bee3f8;
+  color:#2c5aa0;
+  border-left-color:var(--brand)
+}
+
+/* Footer */
+footer{
+  padding:18px 0;
+  color:var(--muted);
+  text-align:center
+}
+
+/* Utilities */
+.mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}
+.flex{display:flex;gap:10px;align-items:center}
+.right{margin-left:auto}
